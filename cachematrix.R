@@ -4,7 +4,6 @@
 ## a numeric matrix and caches its inverse.
 
 ## This function stores a numeric matrix with a cache for its inverse.
-
 makeCacheMatrix <- function(x = matrix()) {
       inv <- NULL
       set <- function(y) {
@@ -20,9 +19,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 x <- makeCacheMatrix(testmatrix)
 
-## This function calculates the inverse the matrix with cache above. If there is already an inverse
-## matrix in the cache, it directly returns it without calculating it again.
-      
+## This function calculates the inverse of the matrix with cache created in the function above. If there is already an inverse
+## matrix in the cache, it directly returns the inverse without calculating it again.      
 cacheSolve <- function(x, ...) {
      inv <- x$getinverse()
      if(!is.null(inv)) {
@@ -34,5 +32,3 @@ cacheSolve <- function(x, ...) {
      x$setinverse(inv)
      inv
 }
-
-
